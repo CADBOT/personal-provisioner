@@ -37,8 +37,11 @@ end
 
 include_recipe 'homesick'
 
-# TODO need to create a home directory before this will work
-homesick_castle 'main_castle' do 
+# The castle name must match the github repoe name
+# ('dotfiles' in this case) or it won't work. I'm not
+# sure if this is a bug or feature of the cookbook
+# I'm using
+homesick_castle 'dotfiles' do 
   user 'CAD'
   source 'git://github.com/CADBOT/dotfiles.git'
   action :install
